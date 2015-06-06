@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Favorite grocery</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+ 
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+    <!-- Optionally, include either the iOS or Android theme -->
+    <!-- <link href="css/ratchet-theme-ios.css" rel="stylesheet"> -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+    <!-- Include the compiled Ratchet JS -->
+    <script src="js/ratchet.js"></script>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+    <!-- <script src="js/scan.js"></script> -->
+	<!-- <script src="js/footer.js"></script>  -->
+   <script src="js/elasticsearch.js"></script>    
+	 <script src="js/util.js"></script> 
+	 <script src="js/common.js"></script>
+	<script src="js/profile.js"></script> 	 
+	 <script src="js/index.js"></script> 
+	 
+ <!-- finger in chrome -->
+  <script src="js/FingerBlaster.js"></script>    
+	 <script type="text/javascript">
+	// <![CDATA[
+		var fb = new FingerBlast ('body');
+	// ]]>
+	</script>
+ 
+ 
+  </head>
+    <body style="position:static">
+    <!-- Make sure all your bars are the first things in your <body> -->
+   <header style="background-color: rgb(250, 229, 7);" class="bar bar-nav">      
+      
+	   <h1 class="title">Favorite grocery</h1>	 
+	  
+	   <a id="index_EditButton" onclick="edit();" style="background-color: rgb(250, 229, 7);" class="btn pull-right">
+			 Edit
+			 <!-- <span class="glyphicon glyphicon-refresh"></span> -->
+		</a>
+    </header>
+
+  <!-- <div class="bar bar-standard bar-header-secondary">
+      <form>
+        <div style="display:inline"><input style="border-radius:0px;width:72%;" type="search" placeholder="Search for product or barcode">
+		<button class="btn" style="margin-top: -5px;border: 0px;">
+		<span class="icon icon-search"></span> 
+		</button>
+		</div>
+      </form>
+    </div>  -->
+
+	
+	<!-- Note: set the class="tab-item active" for the current item for the page - Etienne -->
+	 <nav id="footer" class="bar bar-tab" style="background-color: rgb(0, 0, 0);">
+			<a id="idlist" class="tab-item active" data-ignore="push" href="index.html">				
+				<span class="icon glyphicon glyphicon-shopping-cart"></span>				
+				<span class="tab-label">List</span>
+			</a>
+			<a  class="tab-item" href="scan.html"  data-ignore="push" data-transition="slide-in">
+				<span id="scanButton" class="icon glyphicon glyphicon-barcode"  ></span>
+				<span  class="tab-label" >Scan</span> 
+			</a>
+			<a id="idhistory" class="tab-item" data-ignore="push" href="history.html" data-transition="slide-in">
+				<span id="historyButton" class="icon glyphicon glyphicon-star-empty"></span>
+				<span class="tab-label">History</span>
+			</a>			
+			<a class="tab-item" href="profile.html" data-ignore="push" data-transition="slide-in">
+				<span id="locationButton" class="icon glyphicon glyphicon-cog"></span>  
+				<span class="tab-label">Profile</span>
+			</a>			
+	</nav> 	
+
+    <div class="content"  style="position:static" >
+		<br>
+		<div class="content-padded">
+		
+			<div class="card" id="index_NoItemList" style="display:none;">
+			  <ul class="table-view">
+				<li  style="background-color: rgb(0, 0, 0);color: rgb(245, 245, 245);" >		
+				<br>	
+				<center>Welcome</center>
+				<br>
+				</li>
+				<li style="background-color: rgb(0, 0, 0);color: rgb(245, 245, 245);" >
+				<center style="padding-left: 5px;padding-right: 5px;">Your grocery list is presently empty.<br><br>
+				
+				Use the scan button to add new products or search for a product using the search function above.
+				
+				</center>
+				</li>
+				<li style="background-color: rgb(0, 0, 0);color: rgb(245, 245, 245);">
+				<br>
+				<center><a class="btn btn-negative"  href="scan.html" data-ignore="push" data-transition="slide-up"><span id="scanButton" class="icon glyphicon glyphicon-barcode" ></span>&nbsp;<br>Scan now</a></center> 
+				<br>
+				</li>
+			  </ul>
+			  </div> <!--end index_NolistItem -->
+			
+			<div>
+						
+			<div id="index_ItemList">
+			 
+			  <ul class="table-view">
+			  <li class="table-view-cell table-view-divider"><img src="http://www.mygrocerytour.ca/images/logo_pharmaprix.png"></img>   <button onclick="$('#info_tab1').show();" class="btn icon icon-bars" style="background: rgba(0, 0, 0, 0);border: none;color: rgb(128, 128, 128);"></button> 4km</li>
+				 <li id="info_tab1"style="padding:7px;background:rgb(220, 220, 220);display:none;">
+				  620 Boulevard Seminaire Nord, St-Jean-sur-Richelieu, QC J3B7B4 (~0.63 km )
+				 </li>
+				 
+				 <li class="table-view-cell" style="" ><a class="navigate-right">Couches Pampers <b>24.00 $</b></a></li>
+						
+				
+				 <li class="table-view-cell"><a class="navigate-right">Tynelol        <b> 3.99 $</b></a></li>
+				    <li class="table-view-cell table-view-divider"><img src="http://www.mygrocerytour.ca/images/IGA.gif"></img> <button class="btn icon icon-bars" style="background: rgba(0, 0, 0, 0);border: none;color: rgb(128, 128, 128);"></button> 2km </li>
+				  <li class="table-view-cell"><a class="navigate-right">Tomates rouges <b>2.99$</b></a></li>
+				  <li class="table-view-cell"><a class="navigate-right">Pepsi - 24 can. <b>4.99$</b> </a></li>
+				  <li class="table-view-cell"><a class="navigate-right">Coca-Cola - 24 can. <b>4.99$</b> </a></li>				  
+			  </ul>			 
+			</div>		
+			 </div> <!--end index_listItem -->
+			  
+			  <!-- <div class="card">			 
+			   <ul class="table-view">
+			   <li  style="background-color: rgb(0, 0, 0);color: rgb(245, 245, 245);" >		
+				<br>	
+				<center>Visit our website: mygrocerytour.com</center>
+				<br>
+				</li>
+			    </ul>
+			</div> -->
+		</div>
+	</div>
+  
+    
+	
+      <script>
+		//--Start the app and validate some data...
+		//function startit(){	
+		//if(historyValidator()){
+		//window.location.href="history.html";
+		//	}
+		//else {			
+		//	window.location.href="scan.html";
+		//	};
+		//};  		
+		//startit();
+		//createDebugList();
+		//$( document ).ready(function() {
+		//window.location.href="scan.html";
+			createDebugList();
+			renderProductList();
+			//createDebugList();
+		//});
+		
+		
+	</script>        
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ourAPP</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/ratchet.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+
+    <script src="js/elasticsearch.js"></script>
+   	<script src="js/Alicommon.js"></script>    
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>    
+    <script src="js/util.js"></script> 
+	<script src="js/profile.js"></script> 	 
+	<!--  <script src="js/index.js"></script> -->
+ 
+    <script src="js/scan.js"></script>
+     <script src="js/header.js"></script>
+
+
+
+<script>
+ 
+$(document).ready(function(){  
+	pageHeader();   //coding lab
+	getEnseigne();
+   	//pageFooter(); 
+   	//barcodeScan();
+});
+
+
+</script>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+        
+  </head>
+        
+    
+    
+    <body style="position:static">
+
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav" style="position:static">
+      <h1 class="title">Scan</h1>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content" style="position:static">
+	
+	
+	
+	<center><img id="BarcodeScannerButton" src="Barcode.png" align="middle" onclick="barcodeScan()" style="height: 100px; width: 150px; "></center>
+	
+	
+	<form id="searchBox" name="searchBox" onsubmit="searchProduct()">
+	</form>
+
+
+        <ul id="scanedItem" class="table-view">
+        </ul>
+
+		<ul class="table-view">  		
+  			<li class="table-view-divider">Similar Products</li>
+		</ul>  
+        <ul id="similarItems" class="table-view">
+        </ul>
+
+
+		<!--<p>temp  077652082418</p>-->
+		<!--<p>temp  070177265700</p>-->
+		<!--<p>temp  068400036128</p>-->
+		<!--<p>temp  068100011661</p>-->	
+		<!--<p>temp  067311084334</p-->
+
+
+    </div>
+	
+
+	 <nav id="footer" class="bar bar-tab" style="background-color: rgb(0, 0, 0);">
+			<a id="idlist" class="tab-item" data-ignore="push" href="index.html">				
+				<span class="icon glyphicon glyphicon-shopping-cart"></span>				
+				<span class="tab-label">List</span>
+			</a>
+			<a  class="tab-item active" data-ignore="push" href="scan.html"  data-transition="slide-in">
+				<span id="scanButton" class="icon glyphicon glyphicon-barcode"  ></span>
+				<span  class="tab-label" >Scan</span> 
+			</a>
+			<a id="idhistory" class="tab-item" data-ignore="push" href="history.html" data-transition="slide-in">
+				<span id="historyButton" class="icon glyphicon glyphicon-star-empty"></span>
+				<span class="tab-label">History</span>
+			</a>			
+			<a class="tab-item" href="profile.html" data-ignore="push" data-transition="slide-in">
+				<span id="locationButton" class="icon glyphicon glyphicon-cog"></span>  
+				<span class="tab-label">Profile</span>
+			</a>			
+	</nav> 	
+
+
+
+
+
+
+
+
+
+
+      
+      
+  </body>
+</html>
+
+
+<!-- git clone https://nadia_tahiri@bitbucket.org/dcarrey/mygrocerytour-mobile.git -->
+

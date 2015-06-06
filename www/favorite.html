@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ourAPP</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/ratchet.js"></script>
+   	<script src="js/favorite.js"></script>   //temp
+   	 <script src="js/common.js"></script>
+   	 <script src="js/footer.js"></script>   
+    <script src="js/header.js"></script>   
+
+	<script>
+	  $(document).ready(function(){  
+		pageFooter();
+		chargeRecords("favorite","Items");
+		//chargeFavorite();			
+		});
+	</script>        
+  </head>
+        
+    
+    
+    <body>
+
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav">
+      <h1 class="title">ourAPP/Favorites</h1>
+    </header>
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content">
+        <!--ul id="favoriteItems" class="table-view"-->
+        <ul id="Items" class="table-view"-->
+
+        </ul>
+    </div>
+
+        
+        
+        
+        
+        
+<nav id="footer" class="bar bar-tab">
+</nav>
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+      
+</body>
+</html>

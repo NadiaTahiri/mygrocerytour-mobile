@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Favorite grocery - About</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+ 
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+    <!-- Optionally, include either the iOS or Android theme -->
+    <!-- <link href="css/ratchet-theme-ios.css" rel="stylesheet"> -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+    <!-- Include the compiled Ratchet JS -->
+    <script src="js/ratchet.js"></script>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+    <!-- <script src="js/scan.js"></script> -->
+	<!-- <script src="js/footer.js"></script>  -->
+    <!-- <script src="js/searchNewCode.js"></script>    -->
+	<script src="js/index.js"></script>
+
+ <!-- finger in chrome / to remove in app -->
+  <script src="js/FingerBlaster.js"></script>    
+ <script type="text/javascript">
+// <![CDATA[
+    var fb = new FingerBlast ('body');
+// ]]>
+</script>
+ 
+ 
+  </head>
+    <body>
+    <!-- Make sure all your bars are the first things in your <body> -->
+   <header style="background-color: rgb(250, 229, 7);" class="bar bar-nav">      
+      
+	   <h1 class="title">Favorite grocery</h1>	 
+	   <a href="index.html" style="background-color: rgb(250, 229, 7);" class="btn pull-left">
+			<b>back</b>
+		</a>
+    </header>
+
+  <!-- <div class="bar bar-standard bar-header-secondary">
+      <form>
+        <div style="display:inline"><input style="border-radius:0px;width:72%;" type="search" placeholder="Search for product or barcode">
+		<button class="btn" style="margin-top: -5px;border: 0px;">
+		<span class="icon icon-search"></span> 
+		</button>
+		</div>
+      </form>
+    </div>  -->
+
+	 <nav id="footer" class="bar bar-tab" style="background-color: rgb(0, 0, 0);">
+			<a id="idlist" class="tab-item active" href="favorite.html">				
+				<span class="icon glyphicon glyphicon-shopping-cart"></span>				
+				<span class="tab-label">List</span>
+			</a>
+			<a  class="tab-item" href="scan.html"  data-transition="slide-in">
+				<span id="scanButton" class="icon glyphicon glyphicon-barcode"  ></span>
+				<span  class="tab-label" >Scan</span> 
+			</a>
+			<a id="idhistory" class="tab-item" href="history.html"   data-ignore="push" data-transition="slide-in">
+				<span id="historyButton" class="icon glyphicon glyphicon-star-empty"></span>
+				<span class="tab-label">History</span>
+			</a>			
+			<a class="tab-item" href="settings.html">
+				<span id="locationButton" class="icon glyphicon glyphicon-cog" data-transition="slide-in"></span>  
+				<span class="tab-label">Profile</span>
+			</a>			
+	</nav> 	
+
+    <div class="content">
+		<br>
+		<div class="content-padded">
+			
+			<div class="card" id="about_help">
+			  <ul class="table-view">
+				<li  >		
+				<br>	
+				<center><b>Help</b></center>
+				<br>
+				</li>
+				<li>				
+				
+				</li>
+			
+			  </ul>
+			  </div> <!--end index_listItem -->
+			<div class="card" id="about_about">
+			  <ul class="table-view">
+				<li  >		
+				<br>	
+				<center><b>About</b></center>
+				<br>
+				</li>
+				<li>
+					To complete - Etienne <br>
+					This application was made with cordova.<br>
+					It include bootstrap - ratchet code. <br>
+					It include glypheicons <br>
+					
+				
+				</li>
+			
+			  </ul>
+			  </div> <!--end index_listItem -->
+			  
+			  
+			  <!-- <div class="card">			 
+			   <ul class="table-view">
+			   <li  style="background-color: rgb(0, 0, 0);color: rgb(245, 245, 245);" >		
+				<br>	
+				<center>Visit our website: mygrocerytour.com</center>
+				<br>
+				</li>
+			    </ul>
+			</div> -->
+		</div>
+	</div>
+  
+    
+	
+      <script>
+		//--Start the app and validate some data...
+		//function startit(){	
+		//if(historyValidator()){
+		//	window.location.href="history.html";
+		//	}
+		//else {			
+		//	window.location.href="scan.html";
+		//	};
+		//};  		
+		//startit();
+		
+	</script>        
+</body>
+</html>
